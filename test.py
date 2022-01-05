@@ -351,4 +351,4 @@ def process_theme_step(message):
 
 
 
-bot.infinity_polling(True).polling(none_stop=True,skip_pending=True)
+bot.infinity_polling(True)
