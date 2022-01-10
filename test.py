@@ -1,4 +1,5 @@
 
+from re import T
 from typing import Text
 import telebot
 from telebot import types
@@ -142,7 +143,7 @@ def process_upload(message,nomer):
         file_info = bot.get_file(message.document.file_id)
         downloaded_file = bot.download_file(file_info.file_path)
     # определяем путь загрузки с именем файла
-        src = '../files/' + message.document.file_name
+        src = 'C:/Users/fuji/Documents/GitHub/botxat/files/' + message.document.file_name
     # открываем файл для записи
         with open(src, 'wb') as new_file:
         # записываем данные в файл
@@ -162,7 +163,7 @@ def process_upload_uz(message,nomer):
         file_info = bot.get_file(message.document.file_id)
         downloaded_file = bot.download_file(file_info.file_path)
     # определяем путь загрузки с именем файла
-        src = 'C:/Users/fuji/db/files/' + message.document.file_name
+        src = 'C:/Users/fuji/Documents/GitHub/botxat/files/' + message.document.file_name
     # открываем файл для записи
         with open(src, 'wb') as new_file:
         # записываем данные в файл
@@ -351,4 +352,4 @@ def process_theme_step(message):
 
 
 
-bot.infinity_polling()
+bot.polling(skip_pending=True)
